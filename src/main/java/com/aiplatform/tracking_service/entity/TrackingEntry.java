@@ -6,6 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "tracking_entry")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,7 +21,8 @@ public class TrackingEntry {
 
     private String domain; // fitness, finance, study, etc.
     private String metric; // weight, hours, amount
-    private Double value;
+    @Column(name = "metric_value")
+    private Double metricValue;
 
     private LocalDateTime timestamp;
 }

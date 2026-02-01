@@ -26,7 +26,7 @@ public class TrackingService {
         entry.setUserEmail(userEmail);
         entry.setDomain(request.getDomain());
         entry.setMetric(request.getMetric());
-        entry.setValue(request.getValue());
+        entry.setMetricValue(request.getValue());
         entry.setTimestamp(LocalDateTime.now());
 
         repository.save(entry);
