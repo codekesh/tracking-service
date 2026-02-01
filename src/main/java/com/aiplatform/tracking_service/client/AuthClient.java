@@ -16,7 +16,7 @@ public class AuthClient {
         HttpEntity<Void> entity = new HttpEntity<>(headers);
 
         ResponseEntity<String> response = restTemplate.exchange(
-                "http://localhost:8080/auth/validate",
+                "http://auth-service:8080/auth/validate",
                 HttpMethod.GET,
                 entity,
                 String.class);

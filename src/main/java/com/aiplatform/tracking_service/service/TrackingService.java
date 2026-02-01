@@ -5,7 +5,7 @@ import com.aiplatform.tracking_service.dto.TrackingRequest;
 import com.aiplatform.tracking_service.entity.TrackingEntry;
 import com.aiplatform.tracking_service.repository.TrackingRepository;
 import org.springframework.stereotype.Service;
-
+import java.util.List;
 import java.time.LocalDateTime;
 
 @Service
@@ -31,4 +31,10 @@ public class TrackingService {
 
         repository.save(entry);
     }
+
+    public List<TrackingEntry> getAll(String authHeader) {
+        String userEmail = authClient.validateToken(authHeader);
+        return repository.findByUserEmail(userEmail);
+    }
+
 }
