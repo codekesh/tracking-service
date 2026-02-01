@@ -3,11 +3,15 @@ package com.aiplatform.tracking_service.client;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.*;
+import org.springframework.beans.factory.annotation.Value;
 
 @Component
 public class AuthClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
+
+    @Value("${auth.service.url}")
+    private String authServiceUrl;
 
     public String validateToken(String token) {
         HttpHeaders headers = new HttpHeaders();
@@ -16,7 +20,7 @@ public class AuthClient {
         HttpEntity<Void> entity = new HttpEntity<>(headers);
 
         ResponseEntity<String> response = restTemplate.exchange(
-                "http://auth-service:8080/auth/validate",
+                authServiceUrl + "/auth/validate",
                 HttpMethod.GET,
                 entity,
                 String.class);
