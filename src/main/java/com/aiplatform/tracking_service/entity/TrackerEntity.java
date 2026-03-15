@@ -6,12 +6,12 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tracking_entry")
+@Table(name = "trackers")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class TrackingEntry {
+public class TrackerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +19,7 @@ public class TrackingEntry {
 
     private String userEmail;
 
-    private String domain; // fitness, finance, study, etc.
-    private String metric; // weight, hours, amount
-    @Column(name = "metric_value")
-    private Double metricValue;
+    private String domain;
 
-    private LocalDateTime timestamp;
+    private LocalDateTime createdAt;
 }
