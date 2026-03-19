@@ -6,11 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.*;
 
 import com.aiplatform.tracking_service.dto.DietRequest;
 import com.aiplatform.tracking_service.entity.DietEntity;
 import com.aiplatform.tracking_service.service.DietService;
 
+@RestController
+@RequestMapping("/tracking/diet")
 public class DietController {
     private final DietService dietService;
 
