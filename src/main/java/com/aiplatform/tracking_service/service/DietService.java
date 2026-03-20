@@ -38,9 +38,7 @@ public class DietService {
     }
 
     public List<DietEntity> getEntries(String authHeader) {
-
         String userEmail = authClient.validateToken(authHeader);
-
         return repository.findByUserEmail(userEmail);
     }
 }
