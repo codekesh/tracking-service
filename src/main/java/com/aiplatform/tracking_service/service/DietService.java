@@ -28,10 +28,9 @@ public class DietService {
 
         entry.setUserEmail(userEmail);
         entry.setFoodName(request.getFoodName());
-        entry.setCalories(request.getCalories());
-        entry.setProtein(request.getProtein());
-        entry.setCarbs(request.getCarbs());
-        entry.setFat(request.getFat());
+        entry.setMealType(request.getMealType());
+        entry.setServingSize(request.getServingSize());
+        entry.setNumberOfServings(request.getNumberOfServings());
         entry.setTimestamp(LocalDateTime.now());
 
         repository.save(entry);

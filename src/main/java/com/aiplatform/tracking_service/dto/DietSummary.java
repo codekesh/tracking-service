@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class DietSummary {
-    private int todayCalories;
+    private double todayCalories;
     private int goal;
-    private int entriesCount;
+    private long entriesCount;
 }

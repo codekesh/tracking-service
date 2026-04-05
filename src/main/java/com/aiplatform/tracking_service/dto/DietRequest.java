@@ -5,8 +5,7 @@ import lombok.Data;
 @Data
 public class DietRequest {
     private String foodName;
-    private Integer calories;
-    private Double protein;
-    private Double carbs;
-    private Double fat;
+    private Double numberOfServings;
+    private Double servingSize;
+    private String mealType;
 }

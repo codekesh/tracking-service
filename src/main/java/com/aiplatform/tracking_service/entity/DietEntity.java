@@ -1,8 +1,9 @@
 package com.aiplatform.tracking_service.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "diet_entries")
@@ -15,18 +16,14 @@ public class DietEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String userEmail;
-
     private String foodName;
-
-    private Integer calories;
-
-    private Double protein;
-
-    private Double carbs;
-
     private Double fat;
-
+    private Double servingSize;
+    private Double numberOfServings;
+    private Double calories;
+    private Double protein;
+    private Double carbs;
+    private String mealType;
     private LocalDateTime timestamp;
 }

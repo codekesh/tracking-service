@@ -41,7 +41,7 @@ public class DashboardService {
         return streak;
     }
 
-    private List<String> generateSuggestions(int calories, int streak) {
+    private List<String> generateSuggestions(double calories, int streak) {
 
         List<String> suggestions = new ArrayList<>();
 
@@ -71,13 +71,13 @@ public class DashboardService {
         List<DietEntity> entries = dietRepository.findByUserEmail(userEmail);
 
         // 🔹 Today calories
-        int todayCalories = entries.stream()
+        double todayCalories = entries.stream()
                 .filter(e -> e.getTimestamp().toLocalDate().equals(LocalDate.now()))
-                .mapToInt(DietEntity::getCalories)
+                .mapToDouble(DietEntity::getCalories)
                 .sum();
 
         // 🔹 Today entries count
-        int todayEntries = (int) entries.stream()
+        long todayEntries = entries.stream()
                 .filter(e -> e.getTimestamp().toLocalDate().equals(LocalDate.now()))
                 .count();
 
