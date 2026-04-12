@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class DietRequest {
     private String foodName;
+    private Long id;
     private Long foodId;
     private Double numberOfServings;
     private Double servingSize;

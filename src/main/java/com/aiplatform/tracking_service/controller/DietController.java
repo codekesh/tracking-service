@@ -21,7 +21,6 @@ public class DietController {
     public void addEntry(
             @RequestHeader("Authorization") String authHeader,
             @RequestBody DietRequest request) {
-
         dietService.addEntry(authHeader, request);
     }
 
