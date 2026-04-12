@@ -16,6 +16,7 @@ public class DietEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long foodId;
     private String userEmail;
     private String foodName;
     private Double fat;
