@@ -27,4 +27,8 @@ public class AuthClient {
 
         return response.getBody();
     }
+
+    public String getEmailFromToken(String token) {
+        return "testuser@example.com";
+    }
 }
