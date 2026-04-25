@@ -7,9 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TrackingServiceApplication {
 
 	public static void main(String[] args) {
-		System.out.print("###############################");
-		System.out.println(System.getProperty("DB_URL"));
-		System.out.print("###############################");
 		SpringApplication.run(TrackingServiceApplication.class, args);
 	}
 
