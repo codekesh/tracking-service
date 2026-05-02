@@ -16,8 +16,8 @@ public class DashboardController {
 
     @GetMapping("/summary")
     public DashboardResponse getSummary(
-            @RequestHeader("Authorization") String authHeader) {
-
+            @RequestHeader(value = "Authorization", required = false) String authHeader) {
+        System.out.println("AuthHeader: " + authHeader);
         return dashboardService.getSummary(authHeader);
     }
 }
